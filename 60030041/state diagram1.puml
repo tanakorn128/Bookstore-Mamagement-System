@@ -1,3 +1,21 @@
-@startuml
-
+@startuml "ค้นหาสินค้า"
+skinparam Shadowing false
+skinparam state{
+    BackgroundColor pink 
+}
+[*]-> received
+Searched:searched book
+canceled:
+Display:Product details
+Receipt:
+wanted:Buy Book
+received --> Searched
+Searched -right-> canceled:reject
+canceled --> received
+Searched --> Display
+Display --> wanted
+wanted -right-> canceled:reject
+wanted --> Receipt
+Receipt -right-> [*]
+canceled --> [*]
 @enduml
