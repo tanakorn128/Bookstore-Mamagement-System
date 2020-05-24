@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+class car{
+   + Color
+   + Brand
+   + Windscreen
+   -Engine()
+   -Stereo()
+   +Door()
+}
+class Engine{
++ Starter Motor
+-Pistond()
+-SpearkPlugs()
+}
+class Stereo{
+ +slot input USB and CD/DVD
+ +slot input RCA
+ +slot input Cassette tape
+ +Listen to the radio()
+ +Listen to the Cassette()
+}
+class Door{
++Windscreen
++Door handle()
+}
+class Pistond{
+-Piston size
+-Transfer power()
+}
+class SpearkPlugs{
+-Brand
+-spark ignition()
+}
+class Radio{
++Audio
++Button change AM/FM()
+}
+class Cassette{
++Audio
+-Cassette tape()
+}
+class Handle{
++Handle left
++Handle eight
++Open the dooor()
++Close the door()
+}
+class Tuner{
++Button change radio
+-Change Radio station()
+}
+
+car o-- "1...1"Engine
+car o-- "1...1"Stereo
+car o-- "1...4"Door
+Engine o-- "1...4"Pistond
+Engine o-- "1...4"SpearkPlugs
+Stereo o--  "1...1"Radio
+Stereo o-- "1...1"Cassette
+Door o-- "1...4"Handle
+Radio o-- "1..n"Tuner
+
+
+@enduml
