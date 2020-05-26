@@ -1,6 +1,6 @@
 @startuml "Bookstore Mamagement System"
 skinparam packageStyle rectangle
-
+left to right direction
 :ผู้ผลิต: as Manufacturer
 :เจ้าของร้าน: as Admin
 :ลูกค้า: as Customer
